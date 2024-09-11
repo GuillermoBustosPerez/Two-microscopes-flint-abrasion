@@ -49,6 +49,8 @@ and vertical mixing of artifacts, with on unreliable chrono-cultural
 interpretations. As a result of this, a good analysis of lithic
 assemblage integrity is needed prior to its interpretation.
 
+## References
+
 </div>
 
 <div id="refs" class="references csl-bib-body hanging-indent"
