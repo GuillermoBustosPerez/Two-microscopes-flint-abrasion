@@ -238,10 +238,10 @@ abrasion.
 
 <figure>
 <img src="Figures/01-Presenting-materials.png"
-alt="“Sample of experimental materials before and after 10h of sedimentary abrasion (photographs by M. D. Guillén).”" />
-<figcaption aria-hidden="true">“Sample of experimental materials before
+alt="Sample of experimental materials before and after 10h of sedimentary abrasion (photographs by M. D. Guillén)." />
+<figcaption aria-hidden="true">Sample of experimental materials before
 and after 10h of sedimentary abrasion (photographs by M. D.
-Guillén).”</figcaption>
+Guillén).</figcaption>
 </figure>
 
 Possible contaminants were removed by means of a multi-step procedure
@@ -273,6 +273,102 @@ Data %>% group_by(Microscope, Flake.Time) %>%
     ## 4 Sensofar.S.neox.090 Fresh                100
     ## 5 Sensofar.S.neox.090 Ten.Hours            105
     ## 6 Sensofar.S.neox.090 Neocortex             71
+
+### 2.2) Image acquisition and processing
+
+In order to compare images, the field of view (FOV) and pixel ratio of
+both microscopes must be as similar as possible. Parameters of the
+Dino-Lite Edge 3.0 AM73915MZT were kept the same as in previous
+experiments ([Bustos-Pérez and Ollé,
+2024](#ref-bustos-perez_quantification_2024)), with a FOV of 3.28 x 2.46
+mm and a pixel ratio of 2548 x 1918. As a result, each pixel measured
+1.28 μm (width) by 1.28 μm (height). The Dino-Lite Edge 3.0 AM73915MZT
+microscope was mounted in a Dino-Lite RK-06-AE stand in order to ensure
+verticality, and a N3C-D2 diffuser cap was used to ensure the even
+distribution of light. In the process of taking each photograph, the
+region of interest on the flint was manually positioned as horizontally
+as possible ([Calandra et al., 2022](#ref-calandra_surface_2022)). To
+avoid problems due to focus variation, each surface was photographed
+several times at different heights, and the sequences obtained were
+mounted using a Helicon Focus 7.7.2. Normally, satisfactory stacking
+required between two and four images, although additional images were
+employed when needed.
+
+<figure>
+<img src="Figures/02-Neocortex-comparision.png"
+alt="Example of two images from the same neocortex surface. Left: Sensofar S neox 090; right: Dino-Lite Edge 3.0 AM73915MZT. Both images after processing using Fiji/ImageJ" />
+<figcaption aria-hidden="true">Example of two images from the same
+neocortex surface. Left: Sensofar S neox 090; right: Dino-Lite Edge 3.0
+AM73915MZT. Both images after processing using Fiji/ImageJ</figcaption>
+</figure>
+
+The Sensofar S neox 090 zoom was manually adjusted to the most similar
+FOV (3.18 x 2.65 mm) with 2x2 mosaics taken for each image. All images
+were obtained using a x10 objective lens (numerical aperture 0.30) in
+light scanning confocal mode (microdisplay scanning confocal microscopy)
+at 5 Mp resolution with at least 95% of the information retrieved. The
+original Sensofar S neox 090 photographs had a pixel ratio of 4616 x
+3848. This resulted in each pixel measuring 0.69 x 0.69 μm. In order to
+match the FOV and pixel ratio of the Sensofar S neox 090 zoom to those
+of MP previous studies ([Bustos-Pérez and Ollé,
+2024](#ref-bustos-perez_quantification_2024)), the images were cropped
+and the pixels downsampled. Although the images from the Dino-Lite Edge
+3.0 AM73915MZT microscope were slightly wider (0.10 mm), this resulted
+in almost identical FOV, pixel ratios and pixel widths/heights (Table
+3).
+
+Both sets of images underwent the same two-step image treatment
+procedure employed in a previous study ([Bustos-Pérez and Ollé,
+2024](#ref-bustos-perez_quantification_2024)). First, the Fiji
+([Schindelin et al., 2015](#ref-schindelin_imagej_2015)) “subtract
+background” plugin was used to minimize the effects of different
+lighting and differing flint coloration. Second, the “enhance contrast”
+function was used to desaturate the images by normalizing their
+histograms. This process provided a gray-level image for use as input
+for the statistical analysis. All analyzed images were in TIFF format.
+
+![Example of two images of the same flint fresh surface. Left: Sensofar
+S neox 090; right: Dino-Lite Edge 3.0 AM73915MZT. Both images after
+processing using Fiji/ImageJ.](Figures/03-Comparing-fresh-surface.png)
+![Examples of heavily developed abrasion. Images are of the same flint.
+Both images after processing using
+Fiji/ImageJ.](Figures/04-Comparing-abraded.png)
+
+Photographs of fresh and neocortex surfaces were obtained in the same
+areas with both microscopes. The surface of the flakes that had
+undergone 10h of rounding was initially recognized with both types of
+microscopes and the most-developed surfaces were photographed. This is a
+common procedure when analyzing microscopic traces, as the
+most-developed area ([Ibáñez and Mazzucco,
+2021](#ref-ibanez_quantitative_2021); [Pedergnana et al.,
+2020](#ref-pedergnana_polish_2020)) is targeted for photography. This
+ensured the maximum visibility of the abrasion for each microscope.
+
+``` r
+data.frame(
+  `Microscope images` = c("AM73915MZT", "S neox 090 (original images)", "S neox 090(transformed)"),
+  `Image aspect ratio` = c(1.33, 1.19, 1.33),
+  `FOV (mm)` = c("3.28 x 2.46", "3.18 x 2.65", "3.18 x 2.46"),
+  `Pixel Ratio` = c("2548 x 1918", "4616 x 3848", "2480 x 1918"),
+  `Pixel width height (μm)` = c("1.28 x 1.28", "0.69 x 0.69", "1.28 x 1.28"))
+```
+
+    ##              Microscope.images Image.aspect.ratio    FOV..mm. Pixel.Ratio
+    ## 1                   AM73915MZT               1.33 3.28 x 2.46 2548 x 1918
+    ## 2 S neox 090 (original images)               1.19 3.18 x 2.65 4616 x 3848
+    ## 3      S neox 090(transformed)               1.33 3.18 x 2.46 2480 x 1918
+    ##   Pixel.width.height..μm.
+    ## 1             1.28 x 1.28
+    ## 2             0.69 x 0.69
+    ## 3             1.28 x 1.28
+
+### 2.3) Quantitative analysis
+
+Three groups of metrics were extracted from the microscope images (Table
+4). The first group corresponds to descriptive statistics of the
+gray-level values in each image, which can be divided into measures of
+central tendency (mean, mode and median), and measures of deviation and
+distribution (standard deviation, kurtosis and skewness).
 
 ## References
 
@@ -321,6 +417,16 @@ Method and Theory 26, 1243–1275.
 Bustos-Pérez, G., Ollé, A., 2024. The quantification of surface abrasion
 on flint stone tools. Archaeometry 66, 247–265.
 <https://doi.org/10.1111/arcm.12913>
+
+</div>
+
+<div id="ref-calandra_surface_2022" class="csl-entry">
+
+Calandra, I., Bob, K., Merceron, G., Blateyron, F., Hildebrandt, A.,
+Schulz-Kornas, E., Souron, A., Winkler, D.E., 2022. Surface texture
+analysis in Toothfrax and MountainsMap® SSFA module: Different software
+packages, different results? Peer Community Journal 2, e77.
+<https://doi.org/10.24072/pcjournal.204>
 
 </div>
 
@@ -508,6 +614,15 @@ Anthropological Archaeology 13, 228–254.
 Schick, K.D., 1986. Stone Age Sites in the Making. Experiments in the
 Formation and Transformation of Archaeological Occurrences, BAR
 International Series. Oxford.
+
+</div>
+
+<div id="ref-schindelin_imagej_2015" class="csl-entry">
+
+Schindelin, J., Rueden, C.T., Hiner, M.C., Eliceiri, K.W., 2015. The
+ImageJ ecosystem: An open platform for biomedical image analysis.
+Molecular Reproduction and Development 82, 518–529.
+<https://doi.org/10.1002/mrd.22489>
 
 </div>
 
