@@ -244,6 +244,36 @@ and after 10h of sedimentary abrasion (photographs by M. D.
 Guillén).”</figcaption>
 </figure>
 
+Possible contaminants were removed by means of a multi-step procedure
+based on a previous study \[Pedergnana et al.
+([2016](#ref-pedergnana_modern_2016)). The present study used a two-step
+procedure consisting of an ultrasonic bath (frequency of 40 kHz) in a 2%
+neutral soap (Derquim) solution for 10 to 15 minutes, followed by a
+second sonic bath in pure acetone for another 10 to 15 minutes. After
+each step, the lithic artifacts were placed in a tap water bath and
+finally dried using compressed air. During the cleaning protocol and
+microscopic analysis, all artifacts were handled using powder-free
+surgical gloves.
+
+``` r
+Data %>% group_by(Microscope, Flake.Time) %>% 
+  summarise(Phot.Per.Time = n())
+```
+
+    ## `summarise()` has grouped output by 'Microscope'. You can override using the
+    ## `.groups` argument.
+
+    ## # A tibble: 6 × 3
+    ## # Groups:   Microscope [2]
+    ##   Microscope          Flake.Time Phot.Per.Time
+    ##   <chr>               <fct>              <int>
+    ## 1 Dinolite.Edge       Fresh                100
+    ## 2 Dinolite.Edge       Ten.Hours             87
+    ## 3 Dinolite.Edge       Neocortex             71
+    ## 4 Sensofar.S.neox.090 Fresh                100
+    ## 5 Sensofar.S.neox.090 Ten.Hours            105
+    ## 6 Sensofar.S.neox.090 Neocortex             71
+
 ## References
 
 </div>
@@ -443,6 +473,15 @@ regression and discriminant analysis. Journal of Chemometrics 15,
 Ollé, A., Vergès, J.M., 2014. The use of sequential experiments and SEM
 in documenting stone tool microwear. Journal of Archaeological Science
 48, 60–72. <https://doi.org/10.1016/j.jas.2013.10.028>
+
+</div>
+
+<div id="ref-pedergnana_modern_2016" class="csl-entry">
+
+Pedergnana, A., Asryan, L., Fernández-Marchena, J.L., Ollé, A., 2016.
+Modern contaminants affecting microscopic residue analysis on stone
+tools: A word of caution. Micron 86, 1–21.
+<https://doi.org/10.1016/j.micron.2016.04.003>
 
 </div>
 

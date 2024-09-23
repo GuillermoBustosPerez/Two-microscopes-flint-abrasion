@@ -66,6 +66,14 @@ Geological images of the neocortex were obtained from three type 3 flakes and th
 
 !["Sample of experimental materials before and after 10h of sedimentary abrasion (photographs by M. D. Guillén)."](Figures/01-Presenting-materials.png)
  
+ Possible contaminants were removed by means of a multi-step procedure based on a previous study [@pedergnana_modern_2016. The present study used a two-step procedure consisting of an ultrasonic bath (frequency of 40 kHz) in a 2% neutral soap (Derquim) solution for 10 to 15 minutes, followed by a second sonic bath in pure acetone for another 10 to 15 minutes. After each step, the lithic artifacts were placed in a tap water bath and finally dried using compressed air. During the cleaning protocol and microscopic analysis, all artifacts were handled using powder-free surgical gloves. 
+
+```{r}
+Data %>% group_by(Microscope, Flake.Time) %>% 
+  summarise(Phot.Per.Time = n())
+```
+
+
 
 ## References   
 
