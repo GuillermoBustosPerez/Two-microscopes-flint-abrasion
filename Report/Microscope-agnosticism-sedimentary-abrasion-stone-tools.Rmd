@@ -54,6 +54,10 @@ The sample consisted of 25 flakes experimentally knapped by one of the authors (
 ```{r}
 library(tidyverse)
 load("Data/Data-Both-micro-v3.RData")
+
+Data %>% 
+  group_by(Flint.Type, Flake.Time) %>% 
+  summarise(n_distinct(Flake.ID))
 ```
 
 Five type 1 and 2 flakes were analyzed to obtain images of the fresh surface, while four type 1 flakes and five type 2 flakes were submitted to ten hours of rounding in a tumbling machine (KT-3010 SUPER-TUMBLER). The sedimentary matrix employed to simulate rounding consisted of a mix of sand and water (a total weight of 5 kg of which 30–40% was water). Sediment was obtained from the quaternary levels of the Madrid basin and was made up of fine quartz sands with silt and partial carbonation. The tumbler machine was set at continuous direction at 83 rpm. The average weight of the flakes introduced into the tumbler was 26.25 g.    

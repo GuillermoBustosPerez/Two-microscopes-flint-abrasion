@@ -201,7 +201,25 @@ library(tidyverse)
 
 ``` r
 load("Data/Data-Both-micro-v3.RData")
+
+Data %>% 
+  group_by(Flint.Type, Flake.Time) %>% 
+  summarise(n_distinct(Flake.ID))
 ```
+
+    ## `summarise()` has grouped output by 'Flint.Type'. You can override using the
+    ## `.groups` argument.
+
+    ## # A tibble: 6 × 3
+    ## # Groups:   Flint.Type [3]
+    ##   Flint.Type Flake.Time `n_distinct(Flake.ID)`
+    ##   <chr>      <fct>                       <int>
+    ## 1 GeoSample  Neocortex                       3
+    ## 2 Type_1     Fresh                           5
+    ## 3 Type_1     Ten.Hours                       4
+    ## 4 Type_2     Fresh                           5
+    ## 5 Type_2     Ten.Hours                       5
+    ## 6 Type_2     Neocortex                       3
 
 Five type 1 and 2 flakes were analyzed to obtain images of the fresh
 surface, while four type 1 flakes and five type 2 flakes were submitted
