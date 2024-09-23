@@ -140,7 +140,19 @@ Currently, all data, code and the complete workflow needed to perform the analys
 ### 3.1) Trends of metric variables     
 
 	Table 5 summarizes the observed trends and consistency between microscopes for the variables employed in the analysis. Images from the Dino-Lite Edge 3.0 AM73915MZT show clear trends for all variables and for all three stages of mechanical action considered. The interpretation of the images from the Sensofar S neox 090 was not nearly as clear, with no statistical differences between stages of abrasion for several of the variables.    
-Clear consistency between microscopes was observed for seven variables (mean of pixel values, standard deviation, Sk, Ku, Rq, Ra and CONT) in the form of the same trends and marked statistical differences between values of variables according to stage of abrasion. Two additional variables (median and CORR) presented p values at the limit of significant statistical difference, with the presence of several outliers obfuscating the apparent trends among values. 
+Clear consistency between microscopes was observed for seven variables (mean of pixel values, standard deviation, Sk, Ku, Rq, Ra and CONT) in the form of the same trends and marked statistical differences between values of variables according to stage of abrasion. Two additional variables (median and CORR) presented p values at the limit of significant statistical difference, with the presence of several outliers obfuscating the apparent trends among values.    
+
+```{r}
+kableExtra::kable(
+  data.frame(
+  Feature = c("x̄", "Mo", "m", "SD", "Sk", "Ku", "Rq", "Ra", "Rsk", "Rku", "ASM", "CONT", "CORR", "IDM", "ENT"),
+  Sensofar = c("Increase", "Increase", "No trend", "Increase", "Decrease", "Decrease", "Increase", "Increase", "No trend", "No trend", "No trend", "Increase", "Increase", "No trend", "No trend"),
+  Dinolite = c("Increase", "Increase", "Increase", "Increase", "Decrease", "Decrease", "Increase", "Increase", "Decrease", "Decrease", "Decrease", "Increase", "Decrease", "Decrease", "Increase"),
+  Consistency = c("Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "No", "No", "Yes", "Yes", "No", "No"))
+  )
+
+```
+
 
  
 

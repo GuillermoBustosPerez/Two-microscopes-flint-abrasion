@@ -535,6 +535,34 @@ variables (median and CORR) presented p values at the limit of
 significant statistical difference, with the presence of several
 outliers obfuscating the apparent trends among values.
 
+``` r
+kableExtra::kable(
+  data.frame(
+  Feature = c("x̄", "Mo", "m", "SD", "Sk", "Ku", "Rq", "Ra", "Rsk", "Rku", "ASM", "CONT", "CORR", "IDM", "ENT"),
+  Sensofar = c("Increase", "Increase", "No trend", "Increase", "Decrease", "Decrease", "Increase", "Increase", "No trend", "No trend", "No trend", "Increase", "Increase", "No trend", "No trend"),
+  Dinolite = c("Increase", "Increase", "Increase", "Increase", "Decrease", "Decrease", "Increase", "Increase", "Decrease", "Decrease", "Decrease", "Increase", "Decrease", "Decrease", "Increase"),
+  Consistency = c("Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "No", "No", "Yes", "Yes", "No", "No"))
+  )
+```
+
+| Feature | Sensofar | Dinolite | Consistency |
+|:--------|:---------|:---------|:------------|
+| x̄       | Increase | Increase | Yes         |
+| Mo      | Increase | Increase | Yes         |
+| m       | No trend | Increase | No          |
+| SD      | Increase | Increase | Yes         |
+| Sk      | Decrease | Decrease | Yes         |
+| Ku      | Decrease | Decrease | Yes         |
+| Rq      | Increase | Increase | Yes         |
+| Ra      | Increase | Increase | Yes         |
+| Rsk     | No trend | Decrease | No          |
+| Rku     | No trend | Decrease | No          |
+| ASM     | No trend | Decrease | No          |
+| CONT    | Increase | Increase | Yes         |
+| CORR    | Increase | Decrease | Yes         |
+| IDM     | No trend | Decrease | No          |
+| ENT     | No trend | Increase | No          |
+
 ## References
 
 </div>
