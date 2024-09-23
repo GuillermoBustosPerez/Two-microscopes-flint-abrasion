@@ -64,7 +64,7 @@ Five type 1 and 2 flakes were analyzed to obtain images of the fresh surface, wh
 
 Geological images of the neocortex were obtained from three type 3 flakes and three type 2 flakes (Table 2). These images of geological neocortex serve as reference samples for extreme levels of sedimentary abrasion.    
 
-
+!["Sample of experimental materials before and after 10h of sedimentary abrasion (photographs by M. D. Guillén)."](Figures/01-Presenting-materials.png)
  
 
 ## References   

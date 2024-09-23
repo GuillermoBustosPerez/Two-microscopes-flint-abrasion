@@ -236,6 +236,14 @@ flakes and three type 2 flakes (Table 2). These images of geological
 neocortex serve as reference samples for extreme levels of sedimentary
 abrasion.
 
+<figure>
+<img src="Figures/01-Presenting-materials.png"
+alt="“Sample of experimental materials before and after 10h of sedimentary abrasion (photographs by M. D. Guillén).”" />
+<figcaption aria-hidden="true">“Sample of experimental materials before
+and after 10h of sedimentary abrasion (photographs by M. D.
+Guillén).”</figcaption>
+</figure>
+
 ## References
 
 </div>
