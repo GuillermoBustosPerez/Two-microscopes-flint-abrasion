@@ -290,7 +290,7 @@ Inverse different moment (IDM) showed a decrease in values for both groups of im
 Figure 9 presents the results of correlation pairs between features for both types of microscopes. In general, a high level of correlation was observed among the features for both microscopes. For both microscopes, ASM presented very little correlation with other variables. The CORR feature presented little systematic correlation in the case of images from the Sensofar S neox 090 microscope, and ENT also presented little systematic correlation for the images from the Dino-Lite Edge 3.0 AM73915MZT microscope.     
 The Sensofar S neox 090 presented nine variables exceeding the r2 = 0.9 cut-off threshold (standard deviation, median, Ku, Sk, Rsk, ASM, CORR, IDM and ENT), while the Dino-Lite Edge 3.0 AM73915MZT presented seven features below the cut-off threshold (median, modal, standard deviation, Rsk, ASM, CORR and ENT).    
 
-```{r}
+```{r, fig.width=100}
 #### Collinearity plot of Sensofar images (91 possible combinations) ####
 Data2 <- Data %>% filter(Microscope == "Sensofar.S.neox.090") %>% 
   select(-c(Modal))
@@ -349,6 +349,12 @@ ggpubr::ggarrange(
   align = "hv"
 )
 ```
+
+
+### 3.3) LDA accuracy     
+
+Dimensionality reduction through PCAs resulted in PC1 capturing 99.97% of variance for the set of images from both microscopes. PC2 captured 0.028% of variance for the Sensofar S neox 090 images and 0.022% of variance for the Dino-Lite Edge 3.0 AM73915MZT images.    
+Table 6 presents the results of LDA models for the three different sets of variables selected (complete set of variables, non-collinear variables and first three PCs) by microscope. In general, all models presented outstanding AUC values, and differences between model performance were minimal.    
 
 
 
