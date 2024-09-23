@@ -913,6 +913,218 @@ non-collinear variables and PCs using the Dino-Lite Edge 3.0 AM73915MZT
 images presented very similar accuracy (0.859 and 0.844) and AUC values
 (0.963 and 0.949).
 
+### 3.4) Feature importance
+
+Mean variable importance is presented in Figure 10. In general, there
+was good consistency in variable importance for classification, as
+standard deviation was considered the most important variable for
+classification in both sets of images. It is important to consider that
+the standard deviation was strongly correlated with the CONT textural
+feature in both groups of images (r2 = 0.98 and 0.92). This indicates
+that the degree of deviation in general (standard deviation) and in
+local space (CONT) is highly important in the characterization of
+abraded flint surfaces. The following second and third most important
+variables for the Sensofar S neox 090 group of images were kurtosis and
+skewness. For the Dino-Lite Edge 3.0 AM73915MZT images, kurtosis and
+skewness were strongly correlated with the CORR textural feature (r2 =
+0.95 and 0.93), which is considered the second most important variable.
+
+``` r
+# Extract as data frame
+Sens.Feat.Impo <- data.frame(varImp(Senso.Reduced.LDA, scale = TRUE)$importance)
+Sens.Feat.Impo <- Sens.Feat.Impo %>% mutate(
+  Variable = rownames(Sens.Feat.Impo),
+  Mean.Importance = rowMeans(Sens.Feat.Impo[,1:3]))
+
+# Calculate mean importance
+Dino.Feat.Impo <- data.frame(varImp(Dino.Reduced.LDA, scale = TRUE)$importance)
+Dino.Feat.Impo <- Dino.Feat.Impo %>% mutate(
+  Variable = rownames(Dino.Feat.Impo),
+  Mean.Importance = rowMeans(Dino.Feat.Impo[,1:3]))
+
+
+colnames(Sens.Feat.Impo)
+```
+
+    ## [1] "Fresh"           "Ten.Hours"       "Neocortex"       "Variable"       
+    ## [5] "Mean.Importance"
+
+``` r
+# Plot variable importance
+
+ggpubr::ggarrange(
+  (
+    Sens.Feat.Impo %>% 
+      ggplot(aes(Mean.Importance, reorder(Variable, Mean.Importance), fill = Mean.Importance)) +
+      geom_bar(stat= "identity", position = "dodge") +
+      geom_text(aes(label = round(Mean.Importance, 2)), 
+                position = position_stack(vjust = 0.5), size = 3) +
+      scale_fill_gradient(low = "red", high = "blue") +
+      guides(fill = "none") +
+      xlab("Mean Importance") +
+      ylab(NULL) +
+      ggtitle("Sensofar S neox 090") +
+      theme_light() +
+      theme(
+        plot.title = element_text(hjust = 0.5, size = 10, face = "bold"),
+        axis.text.y = element_text(color = "black", size = 10),
+        axis.text.x = element_text(color = "black", size = 8),
+        axis.title.x = element_text(color = "black", size = 11))
+    ),
+  (
+    Dino.Feat.Impo %>% 
+      ggplot(aes(Mean.Importance, reorder(Variable, Mean.Importance), fill = Mean.Importance)) +
+      geom_bar(stat= "identity", position = "dodge") +
+      geom_text(aes(label = round(Mean.Importance, 2)), 
+                position = position_stack(vjust = 0.5), size = 3) +
+      scale_fill_gradient(low = "red", high = "blue") +
+      guides(fill = "none") +
+      xlab("Mean Importance") +
+      ylab(NULL) +
+      ggtitle("Dino-Lite Edge 3.0 AM73915MZT ") +
+      theme_light() +
+      theme(
+        plot.title = element_text(hjust = 0.5, size = 11, face = "bold"),
+        axis.text.y = element_text(color = "black", size = 10),
+        axis.text.x = element_text(color = "black", size = 8),
+        axis.title.x = element_text(color = "black", size = 11))
+  ))
+```
+
+![](Microscope-agnosticism-sedimentary-abrasion-stone-tools_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
+The LDA model trained on the Sensofar S neox 090 images considered ENT
+the fourth most important variable for discrimination. ENT on the
+Dino-Lite Edge 3.0 AM73915MZT LDA model was correlated with IDM (r2 =
+0.91) and with ASM (r2 = 0.87), the latter of which was considered the
+fourth most important variable in that model. A measure of central
+tendency (median) was considered equally important by both LDA models.
+On the Sensofar S neox 090 images, the median was highly correlated with
+the mean, the Rq and the Ra (r2 = 0.98, 0.98 and 1 respectively). This
+high level of correlation was shared in the Dino-Lite Edge 3.0
+AM73915MZT LDA images along with the CONT textural feature (Figure 9).
+
+``` r
+ggpubr::ggarrange(
+  (Data2 %>% 
+     ggplot(aes(SD, Kurtosis, color = Flake.Time)) +
+     geom_point(alpha = 0.7) +
+     theme_light() +
+     stat_ellipse(aes(color = Flake.Time), show.legend = FALSE) +
+     scale_color_manual(
+       values = c("blue", "orange", "firebrick"),
+       labels = c("Fresh", "10h", "Neocortex"),
+       name = "Flake time") +
+     geom_label(aes(60, 5.65, label = "Sensofar S neox 090"),
+                color = "black", fill = "white", size = 3, alpha = 0.5) +
+     theme(
+       legend.title = element_text(face = "bold", color = "black", size = 11),
+       legend.text = element_text(color = "black", size = 10),
+       axis.text = element_text(color = "black", size = 10),
+       axis.title = element_text(color = "black", size = 10, face = "bold"))
+   ),
+  (Data3 %>% 
+     ggplot(aes(SD, CORR, color = Flake.Time)) +
+     geom_point(alpha = 0.7) +
+     theme_light() +
+     stat_ellipse(aes(color = Flake.Time), show.legend = FALSE) +
+     scale_color_manual(
+       values = c("blue", "orange", "firebrick"),
+       labels = c("Fresh", "10h", "Neocortex"),
+       name = "Flake time") +
+     geom_label(aes(45, 0.0006, label = "Dino-Lite Edge 3.0 AM73915MZT"),
+                color = "black", fill = "white", size = 3, alpha = 0.5) +
+     theme(
+       legend.title = element_text(face = "bold", color = "black", size = 11),
+       legend.text = element_text(color = "black", size = 10),
+       axis.text = element_text(color = "black", size = 10),
+       axis.title = element_text(color = "black", size = 10, face = "bold"))
+   ),
+  
+  common.legend = TRUE,
+  legend = "bottom"
+  )
+```
+
+    ## Warning in geom_label(aes(60, 5.65, label = "Sensofar S neox 090"), color = "black", : All aesthetics have length 1, but the data has 276 rows.
+    ## ℹ Please consider using `annotate()` or provide this layer with data containing
+    ##   a single row.
+    ## All aesthetics have length 1, but the data has 276 rows.
+    ## ℹ Please consider using `annotate()` or provide this layer with data containing
+    ##   a single row.
+
+    ## Warning in geom_label(aes(45, 6e-04, label = "Dino-Lite Edge 3.0 AM73915MZT"), : All aesthetics have length 1, but the data has 258 rows.
+    ## ℹ Please consider using `annotate()` or provide this layer with data containing
+    ##   a single row.
+
+![](Microscope-agnosticism-sedimentary-abrasion-stone-tools_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+
+Exploratory visual analysis of the combination of variables and the
+degree of sedimentary abrasion in scatter plots makes it possible to
+observe a consistency in the evolution of quantitative features (Figure
+11; Figure 12). For both sets of images there is a clear separation
+between images of fresh surfaces and images of neocortex. In addition to
+this consistency, the images of flint surfaces subjected to ten hours of
+rounding are located in between the fresh and neocortex images,
+indicating the directionality of the process.
+
+``` r
+ggpubr::ggarrange(
+  (Data2 %>% 
+     ggplot(aes(SD, Skewness, color = Flake.Time)) +
+     geom_point(alpha = 0.7) +
+     theme_light() +
+     stat_ellipse(aes(color = Flake.Time), show.legend = FALSE) +
+     scale_color_manual(
+       values = c("blue", "orange", "firebrick"),
+       labels = c("Fresh", "10h", "Neocortex"),
+       name = "Flake time") +
+     geom_label(aes(60, 2, label = "Sensofar S neox 090"),
+                color = "black", fill = "white", size = 3, alpha = 0.5) +
+     theme(
+       legend.title = element_text(face = "bold", color = "black", size = 11),
+       legend.text = element_text(color = "black", size = 10),
+       axis.text = element_text(color = "black", size = 10),
+       axis.title = element_text(color = "black", size = 10, face = "bold"))
+  ),
+  (Data3 %>% 
+     ggplot(aes(SD, Median, color = Flake.Time)) +
+     geom_point(alpha = 0.7) +
+     theme_light() +
+     stat_ellipse(aes(color = Flake.Time), show.legend = FALSE) +
+     scale_color_manual(
+       values = c("blue", "orange", "firebrick"),
+       labels = c("Fresh", "10h", "Neocortex"),
+       name = "Flake time") +
+     geom_label(aes(35, 94, label = "Dino-Lite Edge 3.0 AM73915MZT"),
+                color = "black", fill = "white", size = 3, alpha = 0.5) +
+     theme(
+       legend.title = element_text(face = "bold", color = "black", size = 11),
+       legend.text = element_text(color = "black", size = 10),
+       axis.text = element_text(color = "black", size = 10),
+       axis.title = element_text(color = "black", size = 10, face = "bold"))
+  ),
+  
+  common.legend = TRUE,
+  legend = "bottom"
+)
+```
+
+    ## Warning in geom_label(aes(60, 2, label = "Sensofar S neox 090"), color = "black", : All aesthetics have length 1, but the data has 276 rows.
+    ## ℹ Please consider using `annotate()` or provide this layer with data containing
+    ##   a single row.
+    ## All aesthetics have length 1, but the data has 276 rows.
+    ## ℹ Please consider using `annotate()` or provide this layer with data containing
+    ##   a single row.
+
+    ## Warning in geom_label(aes(35, 94, label = "Dino-Lite Edge 3.0 AM73915MZT"), : All aesthetics have length 1, but the data has 258 rows.
+    ## ℹ Please consider using `annotate()` or provide this layer with data containing
+    ##   a single row.
+
+![](Microscope-agnosticism-sedimentary-abrasion-stone-tools_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+
+## 4) Discussion
+
 ## References
 
 </div>
