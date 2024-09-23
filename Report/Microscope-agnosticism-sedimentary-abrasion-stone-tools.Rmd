@@ -14,9 +14,14 @@ linkcolor: blue
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Microscope agnosticism and the characterization of sedimentary abrasion of flint stone tools    
 
 Guillermo Bustos-Pérez $^{1,2,3}$, Andreu Olle $^{2,3}$    
 
+(1) Departament of Human Origins, Max Planck Institute for Evolutionary Anthropology, Leipzig.
+(2) Departamento de Prehistoria y Arqueología, Universidad Autónoma de Madrid, Campus de Cantoblanco, 28049 Madrid, Spain
+(3) Institut Català de Paleoecologia Humana i Evolució Social (IPHES-CERCA), Zona Educacional 4, Campus Sescelades URV (Edifici W3), 43007 Tarragona, Spain
+(4) Universitat Rovira i Virgili, Departament d’Història i Història de l’Art, Avinguda de Catalunya 35, 43002 Tarragona, Spain
 
 
 <div align="justify">   
