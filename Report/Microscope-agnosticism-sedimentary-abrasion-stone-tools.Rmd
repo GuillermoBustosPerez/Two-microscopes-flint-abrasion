@@ -356,12 +356,35 @@ ggpubr::ggarrange(
 Dimensionality reduction through PCAs resulted in PC1 capturing 99.97% of variance for the set of images from both microscopes. PC2 captured 0.028% of variance for the Sensofar S neox 090 images and 0.022% of variance for the Dino-Lite Edge 3.0 AM73915MZT images.    
 
 The following script allows to train the three types of models (all features, reduced number of features and PCA):
-```{r, echo=FALSE}
-source
+
+```{r eval=FALSE}
+source("13-Training-LDA-models.R")
+```
+
+```{r}
+load("Models/Dinolite-LDA-models.RData")
+load("Models/Sensofar-LDA-models.RData")
 ```
 
 
 Table 6 presents the results of LDA models for the three different sets of variables selected (complete set of variables, non-collinear variables and first three PCs) by microscope. In general, all models presented outstanding AUC values, and differences between model performance were minimal.    
+
+```{r}
+kableExtra::kable(
+  data.frame(
+  Variables = c("Complete", "Complete", "Non-Collinear", "Non-Collinear", "PCs", "PCs"),
+  Metric = c("Accuracy", "AUC", "Accuracy", "AUC", "Accuracy", "AUC"),
+  Sensofar = c(Senso.LDA$results[[2]], pROC::multiclass.roc(Senso.LDA$pred$obs, Senso.LDA$pred[,4:6])$auc[[1]],
+               Senso.Reduced.LDA$results[[2]], pROC::multiclass.roc(Senso.Reduced.LDA$pred$obs, Senso.Reduced.LDA$pred[,4:6])$auc[[1]],
+               Senso.PCA.LDA$results[[2]], pROC::multiclass.roc(Senso.PCA.LDA$pred$obs, Senso.PCA.LDA$pred[,4:6])$auc[[1]]),
+  Dinolite = c(Dino.LDA$results[[2]], pROC::multiclass.roc(Dino.LDA$pred$obs, Dino.LDA$pred[,4:6])$auc[[1]],
+               Dino.Reduced.LDA$results[[2]], pROC::multiclass.roc(Dino.Reduced.LDA$pred$obs, Dino.Reduced.LDA$pred[,4:6])$auc[[1]],
+               Dino.PCA.LDA$results[[2]], pROC::multiclass.roc(Dino.PCA.LDA$pred$obs, Dino.PCA.LDA$pred[,4:6])$auc[[1]])
+    )
+) 
+```
+
+In the Sensofar S neox 090 images, no differences were observed between the classification metrics of the LDA model using the complete set of variables (accuracy = 0.853; AUC = 0.957) and the LDA model using non-collinear variables (accuracy = 0.851; AUC = 0.956). The accuracy of the LDA model trained on PCs was slightly lower (0.810), although the AUC value was practically equal to that of the other models (0.944). The LDA model trained on the whole set of variables from the Dino-Lite Edge 3.0 AM73915MZT images presented slightly higher values than the other models (accuracy = 0.89; AUC = 0.977). The LDA model trained on non-collinear variables and PCs using the Dino-Lite Edge 3.0 AM73915MZT images presented very similar accuracy (0.859 and 0.844) and AUC values (0.963 and 0.949).    
 
 
 
