@@ -5,78 +5,78 @@ Guillermo Bustos-Pérez $^{1,2,3}$, Andreu Olle $^{2,3}$
 ## Abstract
 
 The surface of lithic stone tools from Paleolithic archaeological sites
-can suffer different postdepositional alterations, such as sedimentary
-erosion induced by water displacement or wind. The surface of flint
-artifacts can record these alterations as changes in the texture.
-Microscopic analysis and grayscale images can be employed to obtain
-quantitative data to help determine the degree of alteration undergone
-by the surface of a flint stone tool. However, surface quantitative
+can undergo a range of different postdepositional alterations, including
+sedimentary erosion induced by water displacement or wind. The surface
+of flint artifacts can reflect these alterations as changes in texture.
+Microscopic analyses and grayscale images can be employed to obtain
+quantitative data to help determine the degree to which the surfaces of
+flint stone tools have been altered. However, surface quantitative
 values depend directly on the image capturing system of each microscope.
-This raises the question regarding if the quantitative values are
-actually capturing the evolution of a surface, if they are dependent on
-the type of microscope and its image capturing system, and if the
-detection of the degree of abrasion will vary depending on the type of
-microscope. The present work sets to determine if data extracted from
-images from two different microscopes show the same trends in surface
-change when postdepositional alterations occur. Surface photographs of a
-sample of 25 flakes were taken using a Dino-Lite Edge 3.0 AM73915MZT and
-a 3D Optical Profiler Sensofar S neox 090. These flakes represented
-three different stages of alteration (fresh, ten hours of experimentally
-induced sedimentary erosion, and geological neocortex). Results of
-quantitative values from grayscale level images indicate that, despite
-providing different numeric ranges, quantitative values from images of
-both types of microscopes reflect the same trends in surface change. The
-classification accuracy of the three stages of slurry erosion did not
-vary between microscopes.
+This raises the question of whether the quantitative values are actually
+capturing the evolution of the surface, whether they are dependent on
+the type of microscope and its image capturing system, and whether the
+detection of the degree of abrasion might vary depending on the type of
+microscope. The present work sought to determine whether data extracted
+from images from two different microscopes point to the same trends in
+surface change due to postdepositional alterations. Surface photographs
+of a sample of 25 flakes were taken using a Dino-Lite Edge 3.0
+AM73915MZT and a 3D Optical Profiler Sensofar S neox 090. These flakes
+represented three different stages of alteration (fresh, ten hours of
+experimentally-induced sedimentary erosion, and geological neocortex).
+Results from grayscale images indicate that, despite yielding different
+numeric ranges, the quantitative values of the images from both types of
+microscope reflect the same trends in surface change. The classification
+accuracy of the three stages of erosion did not vary between
+microscopes.
 
 **Key words**: microscopic analysis; lithic analysis; lithic taphonomy;
-post-depositional surface modifications
+postdepositional surface modifications
 
 ## Introduction
 
-Flint stone tools are some of the most common remains from Paleolithic
-sites. They provide information about chrono-cultural developments along
-with the behavioral and spatial organization of Paleolithic groups.
-However, stone tools from Paleolithic sites might suffer a series of
-postdepositional alterations, with water flow or wind abrasion being
-some of the most common ([Byers et al., 2015](#ref-byers_flake_2015);
-[Hosfield and Chambers, 2016](#ref-hosfield_flake_2016); [Michel et al.,
-2019](#ref-michel_freezing_2019); [Petraglia and Potts,
-1994](#ref-petraglia_water_1994); [Schick,
-1986](#ref-schick_stone_1986)). These postdepositional alterations can
+Flint stone tools are among the most common remains recovered from
+Paleolithic sites. They provide information not only about
+chrono-cultural developments, but also about the behavioral and spatial
+organization of Paleolithic groups. However, stone tools from
+Paleolithic sites may be subjected to any number of postdepositional
+alterations, most commonly water flow or wind abrasion
+\[byers_flake_2015; Hosfield and Chambers
+([2016](#ref-hosfield_flake_2016)); Michel et al.
+([2019](#ref-michel_freezing_2019)); Petraglia and Potts
+([1994](#ref-petraglia_water_1994)); Schick
+([1986](#ref-schick_stone_1986))\]. These postdepositional processes can
 disrupt archaeological remains, resulting in horizontal and vertical
-mixing of artifacts, with on unreliable chrono-cultural interpretations.
-As a result of this, a good analysis of lithic assemblage integrity is
-needed prior to its interpretation.
+mixing of artifacts and, consequently, unreliable chrono-cultural
+interpretations. Therefore, a solid analysis of the integrity of a
+lithic assemblage is needed prior to its interpretation.
 
-On stone tools, postdepositional alterations and their intensity are
-recorded on the surface, with increasing ridge width and surface
-abrasion being two of the most common features observed ([Burroni et
-al., 2002](#ref-burroni_surface_2002); [Bustos-Pérez et al.,
+Postdepositional alterations and their intensity are recorded on the
+surface of stone tools, most commonly observed in the form of increased
+ridge width and surface abrasion ([Burroni et al.,
+2002](#ref-burroni_surface_2002); [Bustos-Pérez et al.,
 2019](#ref-bustos-perez_experimental_2019); [Bustos-Pérez and Ollé,
 2024](#ref-bustos-perez_quantification_2024); [Chambers,
-2016](#ref-chambers_like_2016);
-[**article?**](#ref-article){shackley_stream_1974). Unaided visual
-assessments of sedimentary abrasion (rounding) can result in an error
-ratio above 80%, indicating the need for microscope assistance through
-quantitative variables ([Chambers, 2016](#ref-chambers_like_2016)).
+2016](#ref-chambers_like_2016); [Shackley,
+1974](#ref-shackley_stream_1974)). Unaided visual assessments of
+sedimentary abrasion (rounding) can result in an error ratio of over
+80%, emphasizing the need for microscopic analyses with quantitative
+variables ([Chambers, 2016](#ref-chambers_like_2016)).
 
-Quantitative characterization of surfaces is an important part of
-different lithic microscopic analytical approaches. Recent traceological
-studies commonly use surface texture quantification for the
-identification of worked materials ([Evans and Donahue,
-2008](#ref-evans_laser_2008); [Ibáñez et al.,
-2019](#ref-ibanez_identifying_2019); [Ibáñez and Mazzucco,
+The quantitative characterization of surfaces is an important part of
+many lithic microscopic analytical approaches. In recent traceological
+studies, surface texture quantification is often used to identify worked
+materials ([Evans and Donahue, 2008](#ref-evans_laser_2008); [Ibáñez et
+al., 2019](#ref-ibanez_identifying_2019); [Ibáñez and Mazzucco,
 2021](#ref-ibanez_quantitative_2021); [Macdonald,
 2014](#ref-macdonald_application_2014); [Sferrazza,
 2023](#ref-sferrazza_grey_2023); [Stemp and Chung,
 2011](#ref-stemp_discrimination_2011); [Stevens et al.,
-2010](#ref-stevens_practical_2010)), or for testing different models of
-polish development ([Ibáñez and Mazzucco,
+2010](#ref-stevens_practical_2010)) or test different models of polish
+development ([Ibáñez and Mazzucco,
 2021](#ref-ibanez_quantitative_2021)). Another area of lithic
-microscopic analysis were surface quantification plays a key role is the
-identification, characterization and estimation of the intensity of
-post-depositional alterations on lithic artefacts ([Burroni et al.,
+microscopic analysis in which surface quantification plays a key role is
+in the identification, characterization and estimation of the intensity
+of postdepositional alterations on lithic artifacts ([Burroni et al.,
 2002](#ref-burroni_surface_2002); [Bustos-Pérez et al.,
 2019](#ref-bustos-perez_experimental_2019); [Caux et al.,
 2018](#ref-caux_aspects_2018); [Chambers,
@@ -84,9 +84,9 @@ post-depositional alterations on lithic artefacts ([Burroni et al.,
 2015](#ref-chu_micro-abrasion_2015); [Hiscock,
 1985](#ref-hiscock_need_1985); [Hosfield et al.,
 2000](#ref-hosfield_interpreting_2000); [Levi Sala,
-1986](#ref-levi_sala_use_1986)). The development of these analysis has
-been incorporated to studies focusing on the integrity of lithic
-artefacts present at archaeological assemblages ([Fraile-Márquez et al.,
+1986](#ref-levi_sala_use_1986)). The development of these analyses has
+been incorporated in studies focusing on the integrity of the lithic
+artifacts in archaeological assemblages ([Fraile-Márquez et al.,
 2022](#ref-fraile-marquez_facing_2022); [Galland et al.,
 2019](#ref-galland_quantifying_2019); [Staurset et al.,
 2023](#ref-staurset_post-depositional_2023)).
@@ -94,14 +94,75 @@ artefacts present at archaeological assemblages ([Fraile-Márquez et al.,
 Recent approaches using sequential experimentation, grayscale images
 ([Bustos-Pérez and Ollé, 2024](#ref-bustos-perez_quantification_2024);
 [Sferrazza, 2023](#ref-sferrazza_grey_2023)) and texture metrics
-([Haralick et al., 1973](#ref-haralick_textural_1973)) have shown the
-possibility of quantifying the surface changes due to sedimentary
-abrasion on flint stone tools. However, the information contained in the
-pixels of a photograph might vary, depending on the capturing system of
-each microscope. This rises the issue of “microscope agnosticism” (the
-quality of metric values or trends to be invariant to the choice of
-microscope). In the present study, four aspects are explored to address
-the issue of microscope agnosticism in sedimentary abrasion.
+([Haralick et al., 1973](#ref-haralick_textural_1973)) have demonstrated
+the viability of quantifying surface changes caused by sedimentary
+abrasion on flint tools. However, the information contained in the
+pixels of a photograph may vary according to the capturing system of
+each microscope. This raises the issue of the importance of microscope
+agnosticism (meaning that metric values or trends do not vary in
+relation to the choice of microscope). In the present study, we explored
+four aspects to explore the issue of microscope agnosticism in relation
+to sedimentary abrasion.
+
+1)  Observed trends in quantitative metrics should be consistent
+    independent of the choice of microscope. The combination of
+    sequential experimentation and quantitative metrics ([Bustos-Pérez
+    and Ollé, 2024](#ref-bustos-perez_quantification_2024); [Ibáñez and
+    Mazzucco, 2021](#ref-ibanez_quantitative_2021); [Ollé and Vergès,
+    2014](#ref-olle_use_2014)) has resulted in a certain degree of
+    confidence regarding how the surface of flint changes progressively
+    as result of a mechanical action. However, the current understanding
+    of this change is directly related to the image acquisition
+    procedure and the quantitative variables derived from those images.
+    Ideally, quantitative trends would remain consistent regardless of
+    the type of microscope used.
+
+2)  Collinearity or multicollinearity of metric features extracted from
+    images should be considered. Several approaches ([Bustos-Pérez and
+    Ollé, 2024](#ref-bustos-perez_quantification_2024); [Ibáñez and
+    Mazzucco, 2021](#ref-ibanez_quantitative_2021); [Pedergnana et al.,
+    2020](#ref-pedergnana_polish_2020); [Sferrazza,
+    2023](#ref-sferrazza_grey_2023); [Stevens et al.,
+    2010](#ref-stevens_practical_2010)) use machine learning (ML)
+    classification algorithms on metric features extracted from images.
+    Along with higher accuracy, one substantial advantage of ML
+    algorithms is that they can provide insights into feature importance
+    for classification. Collinearity is generally not considered
+    problematic for classification metrics, provided that any
+    collinearity present in the training set is also present in the
+    predicted sample. However, collinearity is considered to have
+    substantial effects on interpreting feature importance due to
+    unstable coefficients or redundancy in feature selection. Thus, it
+    is important to be aware of the presence of collinear or
+    multicollinear variables when using quantitative features extracted
+    from images. Images of the same area from different microscopes will
+    vary depending on the image acquiring system, and as a consequence,
+    the presence of collinearity among the extracted features is also
+    expected to vary from microscope to microscope. A microscope
+    generating images with fewer pairs of collinear variables can be
+    considered more reliable for the quantitative characterization of a
+    surface.
+
+3)  3)  Classification accuracy should remain similar despite the use of
+        variables obtained from the images of different microscopes.
+        Accuracy can be affected when multicollinearity is present among
+        the variables. A common approach to this problem is the use of
+        dimensionality reduction methods (PCA, t-SNE; Naes and Mevik
+        ([2001](#ref-naes_understanding_2001))), which make it possible
+        to combine multiple collinear variables while avoiding the loss
+        of information. If multicollinearity is present, the accuracy of
+        a model using raw variables should be compared with a model
+        using dimensionally reduced variables.
+
+4)  Consistency of variable importance among classification algorithms
+    and photographs obtained from different microscopes is a good
+    indicator of microscope agnosticism. However, as previously
+    indicated, variable importance can be affected by collinearity among
+    predictors. This is an important consideration since the importance
+    of a pair of variables might be a result of their collinearity.
+    Additionally, it makes it possible to consider which groups of
+    metric variables should be emphasized when analyzing surface change
+    due to a given mechanical action.
 
 ## References
 
@@ -133,14 +194,6 @@ Method and Theory 26, 1243–1275.
 Bustos-Pérez, G., Ollé, A., 2024. The quantification of surface abrasion
 on flint stone tools. Archaeometry 66, 247–265.
 <https://doi.org/10.1111/arcm.12913>
-
-</div>
-
-<div id="ref-byers_flake_2015" class="csl-entry">
-
-Byers, D.A., Hargiss, E., Finley, J.B., 2015. Flake Morphology, Fluvial
-Dynamics, and Debitage Transport Potential. Geoarchaeology 30, 379–392.
-<https://doi.org/10.1002/gea.21524>
 
 </div>
 
@@ -280,6 +333,31 @@ Anthropological Sciences 11, 5423–5443.
 
 </div>
 
+<div id="ref-naes_understanding_2001" class="csl-entry">
+
+Naes, T., Mevik, B.-H., 2001. Understanding the collinearity problem in
+regression and discriminant analysis. Journal of Chemometrics 15,
+413–426. <https://doi.org/10.1002/cem.676>
+
+</div>
+
+<div id="ref-olle_use_2014" class="csl-entry">
+
+Ollé, A., Vergès, J.M., 2014. The use of sequential experiments and SEM
+in documenting stone tool microwear. Journal of Archaeological Science
+48, 60–72. <https://doi.org/10.1016/j.jas.2013.10.028>
+
+</div>
+
+<div id="ref-pedergnana_polish_2020" class="csl-entry">
+
+Pedergnana, A., Calandra, I., Evans, A.A., Bob, K., Hildebrandt, A.,
+Ollé, A., 2020. Polish is quantitatively different on quartzite flakes
+used on different worked materials. PLOS ONE 15, e0243295.
+<https://doi.org/10.1371/journal.pone.0243295>
+
+</div>
+
 <div id="ref-petraglia_water_1994" class="csl-entry">
 
 Petraglia, M.D., Potts, R., 1994. Water Flow and the Formation of Early
@@ -303,6 +381,13 @@ Sferrazza, P., 2023. Grey level co-occurrence matrix and learning
 algorithms to quantify and classify use-wear on experimental flint
 tools. Journal of Archaeological Science: Reports 48, 103869.
 <https://doi.org/10.1016/j.jasrep.2023.103869>
+
+</div>
+
+<div id="ref-shackley_stream_1974" class="csl-entry">
+
+Shackley, M.L., 1974. Stream abrasion of flint implements. Nature 248,
+501–502. <https://doi.org/10.1038/248501a0>
 
 </div>
 
