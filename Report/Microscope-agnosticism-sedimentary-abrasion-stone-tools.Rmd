@@ -1,6 +1,5 @@
 ---
-title: "Microscope agnosticism and the characterization of sedimentary abrasion of
-  flint stone tools"
+title: "Microscope agnosticism and the characterization of sedimentary abrasion of flint stone tools"
 output:
     md_document:
       variant: gfm
@@ -16,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Microscope agnosticism and the characterization of sedimentary abrasion of flint stone tools    
 
-Guillermo Bustos-Pérez $^{1,2,3}$, Andreu Olle $^{2,3}$    
+Guillermo Bustos-Pérez $^{1,2,3, 4}$, Andreu Olle $^{3,4}$    
 
 (1) Departament of Human Origins, Max Planck Institute for Evolutionary Anthropology, Leipzig.
 (2) Departamento de Prehistoria y Arqueología, Universidad Autónoma de Madrid, Campus de Cantoblanco, 28049 Madrid, Spain
