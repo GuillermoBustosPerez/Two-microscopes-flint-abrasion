@@ -327,12 +327,15 @@ function was used to desaturate the images by normalizing their
 histograms. This process provided a gray-level image for use as input
 for the statistical analysis. All analyzed images were in TIFF format.
 
+ 
+
 ![Example of two images of the same flint fresh surface. Left: Sensofar
 S neox 090; right: Dino-Lite Edge 3.0 AM73915MZT. Both images after
-processing using Fiji/ImageJ.](Figures/03-Comparing-fresh-surface.png)
+processing using Fiji/ImageJ.](Figures/03-Comparing-fresh-surface.png)  
+
 ![Examples of heavily developed abrasion. Images are of the same flint.
 Both images after processing using
-Fiji/ImageJ.](Figures/04-Comparing-abraded.png)
+Fiji/ImageJ.](Figures/04-Comparing-abraded.png)  
 
 Photographs of fresh and neocortex surfaces were obtained in the same
 areas with both microscopes. The surface of the flakes that had
@@ -345,22 +348,21 @@ most-developed area ([Ibáñez and Mazzucco,
 ensured the maximum visibility of the abrasion for each microscope.
 
 ``` r
-data.frame(
+kableExtra::kable(
+  data.frame(
   `Microscope images` = c("AM73915MZT", "S neox 090 (original images)", "S neox 090(transformed)"),
   `Image aspect ratio` = c(1.33, 1.19, 1.33),
   `FOV (mm)` = c("3.28 x 2.46", "3.18 x 2.65", "3.18 x 2.46"),
   `Pixel Ratio` = c("2548 x 1918", "4616 x 3848", "2480 x 1918"),
   `Pixel width height (μm)` = c("1.28 x 1.28", "0.69 x 0.69", "1.28 x 1.28"))
+) 
 ```
 
-    ##              Microscope.images Image.aspect.ratio    FOV..mm. Pixel.Ratio
-    ## 1                   AM73915MZT               1.33 3.28 x 2.46 2548 x 1918
-    ## 2 S neox 090 (original images)               1.19 3.18 x 2.65 4616 x 3848
-    ## 3      S neox 090(transformed)               1.33 3.18 x 2.46 2480 x 1918
-    ##   Pixel.width.height..μm.
-    ## 1             1.28 x 1.28
-    ## 2             0.69 x 0.69
-    ## 3             1.28 x 1.28
+| Microscope.images            | Image.aspect.ratio | FOV..mm.    | Pixel.Ratio | Pixel.width.height..μm. |
+|:-----------------------------|-------------------:|:------------|:------------|:------------------------|
+| AM73915MZT                   |               1.33 | 3.28 x 2.46 | 2548 x 1918 | 1.28 x 1.28             |
+| S neox 090 (original images) |               1.19 | 3.18 x 2.65 | 4616 x 3848 | 0.69 x 0.69             |
+| S neox 090(transformed)      |               1.33 | 3.18 x 2.46 | 2480 x 1918 | 1.28 x 1.28             |
 
 ### 2.3) Quantitative analysis
 
@@ -369,6 +371,33 @@ Three groups of metrics were extracted from the microscope images (Table
 gray-level values in each image, which can be divided into measures of
 central tendency (mean, mode and median), and measures of deviation and
 distribution (standard deviation, kurtosis and skewness).
+
+``` r
+kableExtra::kable(
+  data.frame(
+  Name = c("Mean", "Mode", "Median", "Standard Deviation", "Skewness", "Kurtosis", "RMS deviation/roughness", "Arithmetical mean deviation", "Skewness assessed profile", "Kurtosis assessed profile", "Angular second moment", "Contrast", "Correlation", "Inverse different moment", "Entropy"),
+  Acronym = c("x̄", "Mo", "m", "SD", "Sk", "Ku", "Rq", "Ra", "Rsk", "Rku", "ASM", "CONT", "CORR", "IDM", "ENT"),
+  Group = c("C", "C", "C", "D&D", "D&D", "D&D", "R", "R", "R", "R", "T", "T", "T", "T", "T"))
+)
+```
+
+| Name                        | Acronym | Group |
+|:----------------------------|:--------|:------|
+| Mean                        | x̄       | C     |
+| Mode                        | Mo      | C     |
+| Median                      | m       | C     |
+| Standard Deviation          | SD      | D&D   |
+| Skewness                    | Sk      | D&D   |
+| Kurtosis                    | Ku      | D&D   |
+| RMS deviation/roughness     | Rq      | R     |
+| Arithmetical mean deviation | Ra      | R     |
+| Skewness assessed profile   | Rsk     | R     |
+| Kurtosis assessed profile   | Rku     | R     |
+| Angular second moment       | ASM     | T     |
+| Contrast                    | CONT    | T     |
+| Correlation                 | CORR    | T     |
+| Inverse different moment    | IDM     | T     |
+| Entropy                     | ENT     | T     |
 
 ## References
 

@@ -83,18 +83,25 @@ The Sensofar S neox 090 zoom was manually adjusted to the most similar FOV (3.18
 
 Both sets of images underwent the same two-step image treatment procedure employed in a previous study [@bustos-perez_quantification_2024]. First, the Fiji [@schindelin_imagej_2015] “subtract background” plugin was used to minimize the effects of different lighting and differing flint coloration. Second, the “enhance contrast” function was used to desaturate the images by normalizing their histograms. This process provided a gray-level image for use as input for the statistical analysis. All analyzed images were in TIFF format.     
 
+\ 
+
 ![Example of two images of the same flint fresh surface. Left: Sensofar S neox 090; right: Dino-Lite Edge 3.0 AM73915MZT. Both images after processing using Fiji/ImageJ.](Figures/03-Comparing-fresh-surface.png)
+\ 
+
 ![Examples of heavily developed abrasion. Images are of the same flint. Both images after processing using Fiji/ImageJ.](Figures/04-Comparing-abraded.png)
+\ 
 
 Photographs of fresh and neocortex surfaces were obtained in the same areas with both microscopes. The surface of the flakes that had undergone 10h of rounding was initially recognized with both types of microscopes and the most-developed surfaces were photographed. This is a common procedure when analyzing microscopic traces, as the most-developed area [@ibanez_quantitative_2021; @pedergnana_polish_2020] is targeted for photography. This ensured the maximum visibility of the abrasion for each microscope.    
 
 ```{r}
-data.frame(
+kableExtra::kable(
+  data.frame(
   `Microscope images` = c("AM73915MZT", "S neox 090 (original images)", "S neox 090(transformed)"),
   `Image aspect ratio` = c(1.33, 1.19, 1.33),
   `FOV (mm)` = c("3.28 x 2.46", "3.18 x 2.65", "3.18 x 2.46"),
   `Pixel Ratio` = c("2548 x 1918", "4616 x 3848", "2480 x 1918"),
   `Pixel width height (μm)` = c("1.28 x 1.28", "0.69 x 0.69", "1.28 x 1.28"))
+) 
 ```
 
 
@@ -104,6 +111,12 @@ Three groups of metrics were extracted from the microscope images (Table 4). The
 
 ```{r}
 
+kableExtra::kable(
+  data.frame(
+  Name = c("Mean", "Mode", "Median", "Standard Deviation", "Skewness", "Kurtosis", "RMS deviation/roughness", "Arithmetical mean deviation", "Skewness assessed profile", "Kurtosis assessed profile", "Angular second moment", "Contrast", "Correlation", "Inverse different moment", "Entropy"),
+  Acronym = c("x̄", "Mo", "m", "SD", "Sk", "Ku", "Rq", "Ra", "Rsk", "Rku", "ASM", "CONT", "CORR", "IDM", "ENT"),
+  Group = c("C", "C", "C", "D&D", "D&D", "D&D", "R", "R", "R", "R", "T", "T", "T", "T", "T"))
+)
 ```
 
 
