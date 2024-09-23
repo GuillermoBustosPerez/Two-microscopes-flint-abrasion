@@ -115,7 +115,9 @@ kableExtra::kable(
   data.frame(
   Name = c("Mean", "Mode", "Median", "Standard Deviation", "Skewness", "Kurtosis", "RMS deviation/roughness", "Arithmetical mean deviation", "Skewness assessed profile", "Kurtosis assessed profile", "Angular second moment", "Contrast", "Correlation", "Inverse different moment", "Entropy"),
   Acronym = c("x̄", "Mo", "m", "SD", "Sk", "Ku", "Rq", "Ra", "Rsk", "Rku", "ASM", "CONT", "CORR", "IDM", "ENT"),
-  Group = c("C", "C", "C", "D&D", "D&D", "D&D", "R", "R", "R", "R", "T", "T", "T", "T", "T"))
+  Group = c("C", "C", "C", "D&D", "D&D", "D&D", "R", "R", "R", "R", "T", "T", "T", "T", "T"),
+  Description = c("Central tendency of the sample", "Most repeated value", "Value of at least half the sample", "Variation expected from the mean", "Asymmetry of the distribution", "Tailedness of the distribution", "Indicator of surface roughness", "Deviation of a surface from a mean height", "Indicator of the departure from surface symmetry", "Sharpness of the peaks", "Measure of homogeneity in the image", "Indicative of local variations", "How a reference pixel is related to its neighbor", "Closeness of the distribution of the GLCM elements to the GLCM diagonal.", "Amount of irremediable chaos or disorder in an image")
+  )
 )
 ```
 

@@ -377,27 +377,29 @@ kableExtra::kable(
   data.frame(
   Name = c("Mean", "Mode", "Median", "Standard Deviation", "Skewness", "Kurtosis", "RMS deviation/roughness", "Arithmetical mean deviation", "Skewness assessed profile", "Kurtosis assessed profile", "Angular second moment", "Contrast", "Correlation", "Inverse different moment", "Entropy"),
   Acronym = c("x̄", "Mo", "m", "SD", "Sk", "Ku", "Rq", "Ra", "Rsk", "Rku", "ASM", "CONT", "CORR", "IDM", "ENT"),
-  Group = c("C", "C", "C", "D&D", "D&D", "D&D", "R", "R", "R", "R", "T", "T", "T", "T", "T"))
+  Group = c("C", "C", "C", "D&D", "D&D", "D&D", "R", "R", "R", "R", "T", "T", "T", "T", "T"),
+  Description = c("Central tendency of the sample", "Most repeated value", "Value of at least half the sample", "Variation expected from the mean", "Asymmetry of the distribution", "Tailedness of the distribution", "Indicator of surface roughness", "Deviation of a surface from a mean height", "Indicator of the departure from surface symmetry", "Sharpness of the peaks", "Measure of homogeneity in the image", "Indicative of local variations", "How a reference pixel is related to its neighbor", "Closeness of the distribution of the GLCM elements to the GLCM diagonal.", "Amount of irremediable chaos or disorder in an image")
+  )
 )
 ```
 
-| Name                        | Acronym | Group |
-|:----------------------------|:--------|:------|
-| Mean                        | x̄       | C     |
-| Mode                        | Mo      | C     |
-| Median                      | m       | C     |
-| Standard Deviation          | SD      | D&D   |
-| Skewness                    | Sk      | D&D   |
-| Kurtosis                    | Ku      | D&D   |
-| RMS deviation/roughness     | Rq      | R     |
-| Arithmetical mean deviation | Ra      | R     |
-| Skewness assessed profile   | Rsk     | R     |
-| Kurtosis assessed profile   | Rku     | R     |
-| Angular second moment       | ASM     | T     |
-| Contrast                    | CONT    | T     |
-| Correlation                 | CORR    | T     |
-| Inverse different moment    | IDM     | T     |
-| Entropy                     | ENT     | T     |
+| Name                        | Acronym | Group | Description                                                              |
+|:----------------------------|:--------|:------|:-------------------------------------------------------------------------|
+| Mean                        | x̄       | C     | Central tendency of the sample                                           |
+| Mode                        | Mo      | C     | Most repeated value                                                      |
+| Median                      | m       | C     | Value of at least half the sample                                        |
+| Standard Deviation          | SD      | D&D   | Variation expected from the mean                                         |
+| Skewness                    | Sk      | D&D   | Asymmetry of the distribution                                            |
+| Kurtosis                    | Ku      | D&D   | Tailedness of the distribution                                           |
+| RMS deviation/roughness     | Rq      | R     | Indicator of surface roughness                                           |
+| Arithmetical mean deviation | Ra      | R     | Deviation of a surface from a mean height                                |
+| Skewness assessed profile   | Rsk     | R     | Indicator of the departure from surface symmetry                         |
+| Kurtosis assessed profile   | Rku     | R     | Sharpness of the peaks                                                   |
+| Angular second moment       | ASM     | T     | Measure of homogeneity in the image                                      |
+| Contrast                    | CONT    | T     | Indicative of local variations                                           |
+| Correlation                 | CORR    | T     | How a reference pixel is related to its neighbor                         |
+| Inverse different moment    | IDM     | T     | Closeness of the distribution of the GLCM elements to the GLCM diagonal. |
+| Entropy                     | ENT     | T     | Amount of irremediable chaos or disorder in an image                     |
 
 ## References
 
