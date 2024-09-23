@@ -563,6 +563,54 @@ kableExtra::kable(
 | IDM     | No trend | Decrease | No          |
 | ENT     | No trend | Increase | No          |
 
+Visual analysis of the values in box plots makes it possible compare the
+evolution of trends among the different groups of variables and compare
+microscope consistency (Figure 5; Figure 6; Figure 7; Figure 8). A
+tendency of increasing values was observed among the three measures of
+central tendency in the Dino-Lite Edge 3.0 AM73915MZT images (Figure 5).
+The images of geological neocortex from the Sensofar S neox 090 tended
+to have higher mean and median values than images of fresh flakes and
+those exposed to 10 hours of abrasion. However, no statistical
+difference was found between the median values of the images of fresh
+flint images and those of flakes after 10 hours of rounding (t = -0.73;
+p = 0.46), although there was a statistical difference for the mean
+values of the same two categories (t = -9.80; p \< 0.01). As expected,
+the modal of the distribution was the least reliable variable, with the
+mode consistently having a value of 0 for all Sensofar S neox 090
+images.
+
+``` r
+Data %>% 
+  select(Mean, Modal, Median, Flake.Time, Microscope) %>% 
+  pivot_longer(
+    Mean:Median,
+    names_to = "Variables",
+    values_to = "values") %>% 
+  mutate(Variables = factor(Variables, levels = c("Mean", "Median", "Modal")),
+         Flake.Time = factor(Flake.Time, levels = c("Fresh", "Ten.Hours", "Neocortex"),
+                             labels = c("Fresh", "10 h", "Neocortex"))) %>% 
+  
+  ggplot(aes(Flake.Time, values, fill = Microscope)) +
+  theme_light() +
+  geom_violin(width = 0.4, alpha = 0.5) +
+  geom_boxplot(outlier.shape = NA, outlier.colour = NA,  width = 0.4) +
+  xlab(NULL) +
+  ylab("Values") +
+  ggsci::scale_fill_nejm() +
+  geom_jitter(aes(fill = Microscope), width = 0.15, height = 0, 
+              shape = 23, alpha = 0.5, color = "black") +
+  ggh4x::facet_grid2(Microscope ~ Variables,
+                     scales = "free_y", independent = "y") +
+  theme(
+    legend.position = "none",
+    strip.text = element_text(color = "black", face = "bold", size = 11),
+    strip.background = element_rect(fill = "white", colour = "black", linewidth = 1),
+    axis.text = element_text(color = "black", size = 10)
+  )
+```
+
+![](Microscope-agnosticism-sedimentary-abrasion-stone-tools_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
 ## References
 
 </div>
