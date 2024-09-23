@@ -185,30 +185,13 @@ of opal in these flints, although geodes and pseudo-morphs are sometimes
 present.
 
 ``` r
-library(tidyverse)
-```
-
-    ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-    ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-    ## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-    ## ✔ purrr     1.0.2     
-    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
-    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
+library(tidyverse); library(caret)
 load("Data/Data-Both-micro-v3.RData")
 
 Data %>% 
   group_by(Flint.Type, Flake.Time) %>% 
   summarise(n_distinct(Flake.ID))
 ```
-
-    ## `summarise()` has grouped output by 'Flint.Type'. You can override using the
-    ## `.groups` argument.
 
     ## # A tibble: 6 × 3
     ## # Groups:   Flint.Type [3]
@@ -756,6 +739,117 @@ difference between fresh fling and flint after 10 hours of abrasion (t =
 1.37; p = 0.17). No statistically significant difference was found
 between fresh flint and flint after 10 hours of abrasion in the Sensofar
 S neox 090 images (t = -1.2, p = 0.23) for entropy (ENT) either.
+
+### 3.2) Collinearity among features
+
+Figure 9 presents the results of correlation pairs between features for
+both types of microscopes. In general, a high level of correlation was
+observed among the features for both microscopes. For both microscopes,
+ASM presented very little correlation with other variables. The CORR
+feature presented little systematic correlation in the case of images
+from the Sensofar S neox 090 microscope, and ENT also presented little
+systematic correlation for the images from the Dino-Lite Edge 3.0
+AM73915MZT microscope.  
+The Sensofar S neox 090 presented nine variables exceeding the r2 = 0.9
+cut-off threshold (standard deviation, median, Ku, Sk, Rsk, ASM, CORR,
+IDM and ENT), while the Dino-Lite Edge 3.0 AM73915MZT presented seven
+features below the cut-off threshold (median, modal, standard deviation,
+Rsk, ASM, CORR and ENT).
+
+``` r
+#### Collinearity plot of Sensofar images (91 possible combinations) ####
+Data2 <- Data %>% filter(Microscope == "Sensofar.S.neox.090") %>% 
+  select(-c(Modal))
+
+r2 <- cor(Data2[,2:15], use = "complete.obs")^2
+r2 <- round(r2,2)
+
+### Correlation of dinolite variables (91 possible combinations) ####
+Data3 <- Data %>% filter(Microscope == "Dinolite.Edge") %>% 
+  select(-c(Modal))
+
+r3 <- cor(Data3[, 2:15], use = "complete.obs")^2
+r3 <- round(r3, 2)
+
+((sum(r3 >= 0.9)-ncol(r3)))/2 # 22 pairs present correlation levels above 0.9
+```
+
+    ## [1] 22
+
+``` r
+# Sort out correlated variables from the Dinolite
+df.Test = cor(Data3[,2:15],  use = "complete.obs")^2
+hc = findCorrelation(df.Test, cutoff = 0.9, names = TRUE,
+                     exact = TRUE) 
+
+reduced_Data = Data3 %>% select(-all_of(hc))
+head(reduced_Data)
+```
+
+    ##                              ID      SD Median   Rsk          ASM         CORR
+    ## 1  HDisc_02_01 Neocortex 1.tif  49.4677     90 1.308 0.0003087312 0.0001629269
+    ## 2 HDisc_02_01 Neocortex 10.tif  51.6747     85 1.343 0.0002716125 0.0001463619
+    ## 3  HDisc_02_01 Neocortex 2.tif  50.1672     91 1.302 0.0003179688 0.0001460925
+    ## 4  HDisc_02_01 Neocortex 3.tif  51.1694     90 1.316 0.0003040437 0.0001538169
+    ## 5  HDisc_02_01 Neocortex 4.tif  49.2329     87 1.333 0.0002877750 0.0001553200
+    ## 6  HDisc_02_01 Neocortex 5.tif  51.5332     81 1.379 0.0002437063 0.0001499881
+    ##        ENT    Flake.ID Flake.Number Flint.Type Flake.Time Dorsal.Ventral
+    ## 1 8.335275 HDisc_02_01           01  GeoSample  Neocortex             01
+    ## 2 8.441850 HDisc_02_01           01  GeoSample  Neocortex             01
+    ## 3 8.292125 HDisc_02_01           01  GeoSample  Neocortex             01
+    ## 4 8.316675 HDisc_02_01           01  GeoSample  Neocortex             01
+    ## 5 8.394769 HDisc_02_01           01  GeoSample  Neocortex             01
+    ## 6 8.565931 HDisc_02_01           01  GeoSample  Neocortex             01
+    ##   No.Photo    Microscope case_when(...)
+    ## 1        1 Dinolite.Edge  Dinolite.Edge
+    ## 2        0 Dinolite.Edge  Dinolite.Edge
+    ## 3        2 Dinolite.Edge  Dinolite.Edge
+    ## 4        3 Dinolite.Edge  Dinolite.Edge
+    ## 5        4 Dinolite.Edge  Dinolite.Edge
+    ## 6        5 Dinolite.Edge  Dinolite.Edge
+
+``` r
+#### Two graphs together ####
+ggpubr::ggarrange(
+  
+  (
+    ggcorrplot::ggcorrplot(r2, 
+                           type = "lower",
+                           lab = TRUE,
+                           title = "Sensofar S neox 090",
+                           tl.cex = 6,
+                           lab_size = 2.3) +
+      ggsci::scale_fill_gsea(reverse = FALSE) +
+      theme(legend.position = "none",
+            plot.title = element_text(hjust = 0.5, size = 11, face = "bold"),
+            axis.text = element_text(color = "black", size = 12))
+  ),
+  (
+    ggcorrplot::ggcorrplot(r3, 
+                           type = "lower",
+                           lab = TRUE,
+                           title = "Dino-Lite Edge 3.0 AM73915MZT",
+                           tl.cex = 6,
+                           lab_size = 2.3) +
+      ggsci::scale_fill_gsea(reverse = FALSE) +
+      theme(legend.position = "none",
+            axis.text.y = element_blank(),
+            plot.title = element_text(hjust = 0.5, size = 11, face = "bold"),
+            axis.text = element_text(color = "black", size = 12))
+  ),
+  
+  nrow = 1,
+  ncol = 2,
+  align = "hv"
+)
+```
+
+    ## Scale for fill is already present.
+    ## Adding another scale for fill, which will replace the existing scale.
+    ## Scale for fill is already present.
+    ## Adding another scale for fill, which will replace the existing scale.
+
+![](Microscope-agnosticism-sedimentary-abrasion-stone-tools_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ## References
 
