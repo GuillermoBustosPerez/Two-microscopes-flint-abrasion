@@ -27,7 +27,7 @@ The surface of lithic stone tools from Paleolithic archaeological sites can unde
 
 **Key words**: microscopic analysis; lithic analysis; lithic taphonomy; postdepositional surface modifications    
 
-## Introduction     
+## 1) Introduction     
 
 Flint stone tools are among the most common remains recovered from Paleolithic sites. They provide information not only about chrono-cultural developments, but also about the behavioral and spatial organization of Paleolithic groups. However, stone tools from Paleolithic sites may be subjected to any number of postdepositional alterations, most commonly water flow or wind abrasion [byers_flake_2015; @hosfield_flake_2016; @michel_freezing_2019; @petraglia_water_1994; @schick_stone_1986]. These postdepositional processes can disrupt archaeological remains, resulting in horizontal and vertical mixing of artifacts and, consequently, unreliable chrono-cultural interpretations. Therefore, a solid analysis of the integrity of a lithic assemblage is needed prior to its interpretation.   
 
@@ -41,11 +41,26 @@ Recent approaches using sequential experimentation, grayscale images [@bustos-pe
   
   2) Collinearity or multicollinearity of metric features extracted from images should be considered. Several approaches [@bustos-perez_quantification_2024; @ibanez_quantitative_2021; @pedergnana_polish_2020; @sferrazza_grey_2023; @stevens_practical_2010] use machine learning (ML) classification algorithms on metric features extracted from images. Along with higher accuracy, one substantial advantage of ML algorithms is that they can provide insights into feature importance for classification. Collinearity is generally not considered problematic for classification metrics, provided that any collinearity present in the training set is also present in the predicted sample. However, collinearity is considered to have substantial effects on interpreting feature importance due to unstable coefficients or redundancy in feature selection. Thus, it is important to be aware of the presence of collinear or multicollinear variables when using quantitative features extracted from images. Images of the same area from different microscopes will vary depending on the image acquiring system, and as a consequence, the presence of collinearity among the extracted features is also expected to vary from microscope to microscope. A microscope generating images with fewer pairs of collinear variables can be considered more reliable for the quantitative characterization of a surface.   
   
-  3) 3) Classification accuracy should remain similar despite the use of variables obtained from the images of different microscopes. Accuracy can be affected when multicollinearity is present among the variables. A common approach to this problem is the use of dimensionality reduction methods (PCA, t-SNE; @naes_understanding_2001), which make it possible to combine multiple collinear variables while avoiding the loss of information. If multicollinearity is present, the accuracy of a model using raw variables should be compared with a model using dimensionally reduced variables.    
+  3) Classification accuracy should remain similar despite the use of variables obtained from the images of different microscopes. Accuracy can be affected when multicollinearity is present among the variables. A common approach to this problem is the use of dimensionality reduction methods (PCA, t-SNE; @naes_understanding_2001), which make it possible to combine multiple collinear variables while avoiding the loss of information. If multicollinearity is present, the accuracy of a model using raw variables should be compared with a model using dimensionally reduced variables.    
   
   4) Consistency of variable importance among classification algorithms and photographs obtained from different microscopes is a good indicator of microscope agnosticism. However, as previously indicated, variable importance can be affected by collinearity among predictors. This is an important consideration since the importance of a pair of variables might be a result of their collinearity. Additionally, it makes it possible to consider which groups of metric variables should be emphasized when analyzing surface change due to a given mechanical action.    
   
-  
+## 2) Methods   
+
+### 2.1) Experimental sample and cleaning protocol    
+
+The sample consisted of 25 flakes experimentally knapped by one of the authors (GBP) using direct percussion with a hard hammer. The flakes came from three different types of flint (Table 1), all of them south Madrid Miocene flint [@bustillo_caracterizacion_2012; @bustillo_caracteristicas_2005] from different locations. South Madrid Miocene flints were formed by the replacement of sedimentary rocks which had filled the original basin, which is thought to have taken place under continental conditions such as alluvial plain deposits, shallow lacustrine waters, and marshes [@bustillo_caracterizacion_2012]. Macroscopic analysis of the flints shows that they present a fine, opaque, homogeneous surface and blue/grey and reddish/ocher coloration. There is also a relative absence of opal in these flints, although geodes and pseudo-morphs are sometimes present.    
+
+```{r}
+library(tidyverse)
+load("Data/Data-Both-micro-v3.RData")
+```
+
+Five type 1 and 2 flakes were analyzed to obtain images of the fresh surface, while four type 1 flakes and five type 2 flakes were submitted to ten hours of rounding in a tumbling machine (KT-3010 SUPER-TUMBLER). The sedimentary matrix employed to simulate rounding consisted of a mix of sand and water (a total weight of 5 kg of which 30–40% was water). Sediment was obtained from the quaternary levels of the Madrid basin and was made up of fine quartz sands with silt and partial carbonation. The tumbler machine was set at continuous direction at 83 rpm. The average weight of the flakes introduced into the tumbler was 26.25 g.    
+
+Geological images of the neocortex were obtained from three type 3 flakes and three type 2 flakes (Table 2). These images of geological neocortex serve as reference samples for extreme levels of sedimentary abrasion.    
+
+
  
 
 ## References   

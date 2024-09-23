@@ -32,7 +32,7 @@ microscopes.
 **Key words**: microscopic analysis; lithic analysis; lithic taphonomy;
 postdepositional surface modifications
 
-## Introduction
+## 1) Introduction
 
 Flint stone tools are among the most common remains recovered from
 Paleolithic sites. They provide information not only about
@@ -143,16 +143,16 @@ to sedimentary abrasion.
     considered more reliable for the quantitative characterization of a
     surface.
 
-3)  3)  Classification accuracy should remain similar despite the use of
-        variables obtained from the images of different microscopes.
-        Accuracy can be affected when multicollinearity is present among
-        the variables. A common approach to this problem is the use of
-        dimensionality reduction methods (PCA, t-SNE; Naes and Mevik
-        ([2001](#ref-naes_understanding_2001))), which make it possible
-        to combine multiple collinear variables while avoiding the loss
-        of information. If multicollinearity is present, the accuracy of
-        a model using raw variables should be compared with a model
-        using dimensionally reduced variables.
+3)  Classification accuracy should remain similar despite the use of
+    variables obtained from the images of different microscopes.
+    Accuracy can be affected when multicollinearity is present among the
+    variables. A common approach to this problem is the use of
+    dimensionality reduction methods (PCA, t-SNE; Naes and Mevik
+    ([2001](#ref-naes_understanding_2001))), which make it possible to
+    combine multiple collinear variables while avoiding the loss of
+    information. If multicollinearity is present, the accuracy of a
+    model using raw variables should be compared with a model using
+    dimensionally reduced variables.
 
 4)  Consistency of variable importance among classification algorithms
     and photographs obtained from different microscopes is a good
@@ -163,6 +163,60 @@ to sedimentary abrasion.
     Additionally, it makes it possible to consider which groups of
     metric variables should be emphasized when analyzing surface change
     due to a given mechanical action.
+
+## 2) Methods
+
+### 2.1) Experimental sample and cleaning protocol
+
+The sample consisted of 25 flakes experimentally knapped by one of the
+authors (GBP) using direct percussion with a hard hammer. The flakes
+came from three different types of flint (Table 1), all of them south
+Madrid Miocene flint ([Bustillo et al.,
+2012](#ref-bustillo_caracterizacion_2012); [Bustillo and Pérez-Jiménez,
+2005](#ref-bustillo_caracteristicas_2005)) from different locations.
+South Madrid Miocene flints were formed by the replacement of
+sedimentary rocks which had filled the original basin, which is thought
+to have taken place under continental conditions such as alluvial plain
+deposits, shallow lacustrine waters, and marshes ([Bustillo et al.,
+2012](#ref-bustillo_caracterizacion_2012)). Macroscopic analysis of the
+flints shows that they present a fine, opaque, homogeneous surface and
+blue/grey and reddish/ocher coloration. There is also a relative absence
+of opal in these flints, although geodes and pseudo-morphs are sometimes
+present.
+
+``` r
+library(tidyverse)
+```
+
+    ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+    ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+    ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+    ## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+    ## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+    ## ✔ purrr     1.0.2     
+    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+``` r
+load("Data/Data-Both-micro-v3.RData")
+```
+
+Five type 1 and 2 flakes were analyzed to obtain images of the fresh
+surface, while four type 1 flakes and five type 2 flakes were submitted
+to ten hours of rounding in a tumbling machine (KT-3010 SUPER-TUMBLER).
+The sedimentary matrix employed to simulate rounding consisted of a mix
+of sand and water (a total weight of 5 kg of which 30–40% was water).
+Sediment was obtained from the quaternary levels of the Madrid basin and
+was made up of fine quartz sands with silt and partial carbonation. The
+tumbler machine was set at continuous direction at 83 rpm. The average
+weight of the flakes introduced into the tumbler was 26.25 g.
+
+Geological images of the neocortex were obtained from three type 3
+flakes and three type 2 flakes (Table 2). These images of geological
+neocortex serve as reference samples for extreme levels of sedimentary
+abrasion.
 
 ## References
 
@@ -177,6 +231,23 @@ Burroni, D., Donahue, R.E., Pollard, A.M., 2002. The Surface Alteration
 Features of Flint Artefacts as a Record of Environmental Processes.
 Journal of Archaeological Science 29, 1277–1287.
 <https://doi.org/10.1006/jasc.2001.0771>
+
+</div>
+
+<div id="ref-bustillo_caracteristicas_2005" class="csl-entry">
+
+Bustillo, M.A., Pérez-Jiménez, J.L., 2005. Características diferenciales
+y génesis de los niveles silíceos explotados en el yacimiento
+arqueológico de Casa Montero (Vicálvaro, Madrid). Geogaceta 38, 243–246.
+
+</div>
+
+<div id="ref-bustillo_caracterizacion_2012" class="csl-entry">
+
+Bustillo, M.Á., Pérez-Jiménez, J.L., Bustillo, M., 2012. Caracterización
+geoquímica de rocas sedimentarias formadas por silicificación como
+fuentes de suministro de utensilios líticos (Mioceno, cuenca de Madrid).
+Revista Mexicana de Ciencias Geológicas 29, 233–247.
 
 </div>
 
