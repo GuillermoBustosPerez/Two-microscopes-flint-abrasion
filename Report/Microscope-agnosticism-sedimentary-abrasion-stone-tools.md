@@ -1,6 +1,6 @@
 # Microscope agnosticism and the characterization of sedimentary abrasion of flint stone tools
 
-Guillermo Bustos-Pérez $^{1,2,3}$, Andreu Olle $^{2,3}$
+Guillermo Bustos-Pérez $^{1,2,3, 4}$, Andreu Olle $^{3,4}$
 
 1)  Departament of Human Origins, Max Planck Institute for Evolutionary
     Anthropology, Leipzig.
@@ -1168,7 +1168,23 @@ values similar to those of LDA models trained on the Sensofar S neox 090
 images. This indicates that the given task (classification of
 sedimentary abrasion stages) can be accurately performed with both
 microscopes despite differences in the quality of the quantitative
-features.
+features.  
+Pixel gray level values of the images might be result of changes in the
+topography, presence of polish/abrasion, homogeneity of the raw
+material, or presence of reflective geological structures such as
+geodes, opals, etc. Ideally, for the present study, the image capture
+process of a microscope should not be affected by processes other than
+abrasion and changes in topography. Comparison of the images from both
+microscopes shows that Dino-Lite Edge 3.0 AM73915MZT is prone to be more
+affected by the presence of these reflective structures, thus affecting
+the pixel values of the grayscale level images. It can be considered
+that because of this, feature values extracted from Dino-Lite Edge 3.0
+AM73915MZT images present a wider range and more marked trends, while
+still capturing the mechanical process of sedimentary abrasion. While
+the present workflow seems to adequately capture changes on flint
+surface due to sedimentary abrasion, it might not be suited (or require
+adaptation) for other more heterogeneous raw materials such as
+quartzites or quartz’s.
 
 Because chrono-cultural interpretations are derived from lithic
 archaeological assemblages, determining the integrity of such
