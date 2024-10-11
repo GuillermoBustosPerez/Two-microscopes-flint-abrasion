@@ -1,6 +1,7 @@
 ## **General information**   
 
-**Title:** Microscope agnosticism and the characterization of sedimentary abrasion of flint stone tools.  
+**Title:** Microscope agnosticism and the characterization of sedimentary abrasion of flint stone tools.    
+**Journal**: Journal of Archaeological Science: Reports.    
 **Authors:**  
 
   * Guillermo Bustos-Pérez $^{1,2,3, 4}$        
@@ -33,9 +34,10 @@ The following data and code is publish under a **Non Commercial 4.0 Internationa
 
 ## **Structure of the repository**   
 
-The following repository is organized following the structure of a *research compendium* (Marwick et al., 2018).  
+The following repository is organized following the structure of a *research compendium* (Marwick et al., 2018). The [**Report**](Report) folder contains all data, images and complete workflow to reproduce the current research. Within this folder the following subfolders can be found:   
 
-  * The [**Report**](Report) folder contains all data, images and complete workflow to reproduce the current research.   
+  * [**Data**](Report/Data): contains [Images from microscopes](Report/Data/Images from microscopes) from both microscopes used for analysis, along with 
+
 
 
 
