@@ -36,11 +36,12 @@ The following data and code is publish under a **Non Commercial 4.0 Internationa
 
 The following repository is organized following the structure of a *research compendium* (Marwick et al., 2018). The [**Report**](Report) folder contains all data, images and complete workflow to reproduce the current research. Within this folder the following subfolders can be found:   
 
-  * [**Data**](Report/Data): contains [*Images from microscopes*](Report/Data/Images from microscopes) used for analysis, along with 
+  * [**Data**](Report/Data): contains *images from microscopes* used for analysis, along with the RData files containing the extracted metric features of each image and microscope type.    
+  * [**Figures**](Report/Figures): contains externally produced figures included in the manuscript.   
+  * [**Models**](Report/Models): contains all LDA models generated through the analysis. These are: models with all set of variables, models using Principal Components, and models with subset selection of variables.    
+  * [**Scripts**](Report/Scripts): the script sourced to train the models.   
 
-
-
-
+The manuscript is made available as a [**.md**](Report/Microscope-agnosticism-sedimentary-abrasion-stone-tools.md) or as a [**.Rmd**](Report/Microscope-agnosticism-sedimentary-abrasion-stone-tools.Rmd) file. These files contain the complete workflow to reproduce the analysis.   
 
 ## **References**   
 
