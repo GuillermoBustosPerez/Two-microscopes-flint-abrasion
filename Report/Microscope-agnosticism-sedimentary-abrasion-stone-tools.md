@@ -448,7 +448,10 @@ al., 2013](#ref-james_introduction_2013); [Yang and Yang,
 2003](#ref-yang_why_2003)). Consistency among the variable trend of data
 from both microscopes was evaluated through visual exploratory analysis
 and statistical differences between each consecutive episode of
-abrasion.
+abrasion. Consistency among the variable trend of data from both
+microscopes was evaluated through visual exploratory analysis and
+statistical differences between each consecutive episode of abrasion
+using student’s t-test ([Student, 1908](#ref-student_probable_1908)).
 
 A previous study ([Bustos-Pérez and Ollé,
 2024](#ref-bustos-perez_quantification_2024)) using the same type of
@@ -568,11 +571,11 @@ to have higher mean and median values than images of fresh flakes and
 those exposed to 10 hours of abrasion. However, no statistical
 difference was found between the median values of the images of fresh
 flint images and those of flakes after 10 hours of rounding (t = -0.73;
-p = 0.46), although there was a statistical difference for the mean
-values of the same two categories (t = -9.80; p \< 0.01). As expected,
-the modal of the distribution was the least reliable variable, with the
-mode consistently having a value of 0 for all Sensofar S neox 090
-images.
+p = 0.46, df = 191.32), although there was a statistical difference for
+the mean values of the same two categories (t = -9.80; p \< 0.01, df =
+99.42). As expected, the modal of the distribution was the least
+reliable variable, with the mode consistently having a value of 0 for
+all Sensofar S neox 090 images.
 
 ``` r
 Data %>% 
@@ -612,7 +615,8 @@ values (Figure 6). Standard deviation and kurtosis showed marked
 statistically significant trends (increase and decrease respectively)
 for both types of microscopes. The skewness values of the Sensofar S
 neox 090 images for fresh flint and flint subjected to 10 hours of
-rounding presented slight statistical differences (t = 2.15; p = 0.03).
+rounding presented slight statistical differences (t = 2.15; p = 0.03,
+df = 201.75).
 
 ``` r
 Data %>% 
@@ -651,14 +655,15 @@ microscopes (Rq and Ra). Images from the Dino-Lite Edge 3.0 AM73915MZT
 showed a clear trend of increasing values as sedimentary abrasion
 progresses. This trend was less marked in the Sensofar S neox 090
 images, although there were statistically significant differences in Rq
-values (t = -3.86, p \< 0.01) between fresh flint and flint subjected to
-ten hours of rounding. The statistical significance between these stages
-of sedimentary abrasion was less marked for the Ra values (t = -2.21, p
-= 0.02). Although Rsk, and Rku presented clear trends of diminishing
-values in the case of the Dino-Lite Edge 3.0 AM73915MZT images, no
-statistically significant difference was observed between fresh flint
-values and those of flint after 10 hours of rounding for the Sensofar S
-neox 090 images (t = -1.42, p = 0.16; t = -0.47, p = 0.64).
+values (t = -3.86, p \< 0.01, df = 194.49) between fresh flint and flint
+subjected to ten hours of rounding. The statistical significance between
+these stages of sedimentary abrasion was less marked for the Ra values
+(t = -2.21, p = 0.02, df = 193.99). Although Rsk, and Rku presented
+clear trends of diminishing values in the case of the Dino-Lite Edge 3.0
+AM73915MZT images, no statistically significant difference was observed
+between fresh flint values and those of flint after 10 hours of rounding
+for the Sensofar S neox 090 images (t = -1.42, p = 0.16, df = 194.46; t
+= -0.47, p = 0.64, df = 197.98).
 
 ``` r
 Data %>% 
@@ -732,25 +737,26 @@ values, although this decrease was much more pronounced among the images
 obtained from the Dino-Lite Edge 3.0 AM73915MZT. For the Sensofar S neox
 090, there was a statistically significant difference between the images
 of fresh flint and flint after 10 hours of rounding (t = -2.04, p =
-0.04), although this significance was not present in images of flint
-after 10 hours of rounding and neocortex (t = -0.79, p = 0.43), which
-may be the result of the presence of abundant outliers in the neocortex
-category. Contrast (CONT) presented the best example of consistency of
-all the variables, with the values of images from both microscopes
-presenting a clear increasing trend as sedimentary abrasion increased.
-Correlation (CORR) presented the clearest example of an inverse trend
-between the microscopes. Values of images from the Sensofar S neox 090
-showed a clear increasing trend (within a wide range of distribution),
-while values from the Dino-Lite Edge 3.0 AM73915MZT images showed a
-decreasing trend and more concentrated values.
+0.04, df = 143.25), although this significance was not present in images
+of flint after 10 hours of rounding and neocortex (t = -0.79, p = 0.43,
+df = 81.28), which may be the result of the presence of abundant
+outliers in the neocortex category. Contrast (CONT) presented the best
+example of consistency of all the variables, with the values of images
+from both microscopes presenting a clear increasing trend as sedimentary
+abrasion increased. Correlation (CORR) presented the clearest example of
+an inverse trend between the microscopes. Values of images from the
+Sensofar S neox 090 showed a clear increasing trend (within a wide range
+of distribution), while values from the Dino-Lite Edge 3.0 AM73915MZT
+images showed a decreasing trend and more concentrated values.
 
 Inverse different moment (IDM) showed a decrease in values for both
 groups of images, although the neocortex images from the Sensofar S neox
 090 presented a wider range of distribution values, with no significant
-difference between fresh fling and flint after 10 hours of abrasion (t =
-1.37; p = 0.17). No statistically significant difference was found
-between fresh flint and flint after 10 hours of abrasion in the Sensofar
-S neox 090 images (t = -1.2, p = 0.23) for entropy (ENT) either.
+difference between fresh flint and flint after 10 hours of abrasion (t =
+1.37; p = 0.17, df = 190.54). No statistically significant difference
+was found between fresh flint and flint after 10 hours of abrasion in
+the Sensofar S neox 090 images (t = -1.2, p = 0.23, df = 173.47) for
+entropy (ENT) either.
 
 ### 3.2) Collinearity among features
 
@@ -1727,6 +1733,13 @@ Stevens, N.E., Harro, D.R., Hicklin, A., 2010. Practical quantitative
 lithic use-wear analysis using multiple classifiers. Journal of
 Archaeological Science 37, 2671–2678.
 <https://doi.org/10.1016/j.jas.2010.06.004>
+
+</div>
+
+<div id="ref-student_probable_1908" class="csl-entry">
+
+Student, 1908. The Probable Error of a Mean. Biometrika 6, 1–25.
+<https://doi.org/10.2307/2331554>
 
 </div>
 
