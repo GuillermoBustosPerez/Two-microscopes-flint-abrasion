@@ -36,7 +36,7 @@ The following data and code is publish under a **Non Commercial 4.0 Internationa
 
 The following repository is organized following the structure of a *research compendium* (Marwick et al., 2018). The [**Report**](Report) folder contains all data, images and complete workflow to reproduce the current research. Within this folder the following subfolders can be found:   
 
-  * [**Data**](Report/Data): contains the [Images from microscopes](Images from microscopes) used for analysis, along with 
+  * [**Data**](Report/Data): contains [*Images from microscopes*](Report/Data/Images from microscopes) used for analysis, along with 
 
 
 
