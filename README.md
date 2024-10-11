@@ -27,9 +27,8 @@ The surface of lithic stone tools from Paleolithic archaeological sites can unde
 
 **Key words**: microscopic analysis; lithic analysis; lithic taphonomy; postdepositional surface modifications      
 
-## **Access information**   
+## **Access information: License **   
 
-**License**   
 The following data and code is publish under a **Non Commercial 4.0 International (CC BY-NC 4.0) license**. For more details, see the [**License**](License.md) file.     
 
 ## **Structure of the repository**   
